@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- balises isolées -->
+  <!-- écrire les balises "isolées" ici -->
+  <xsd:element name="annee" type="xsd:short" />
+  <!-- balises titre -->
+  <xsd:element name="titre">
+    <!-- completez la balise "titre" ici -->
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="lang" use="required">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="en"/>
+                <xsd:enumeration value="fr"/>
+                <xsd:enumeration value="es"/>
+                <xsd:enumeration value="it"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  <!-- balise titres -->
+  <xsd:element name="titres">
+    <!-- completez la balise "titres" ici -->
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="titre" maxOccurs="unbounded"  />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <!-- balise auteur -->
+  <xsd:element name="auteur" >
+    <!-- completez la balise "auteur" ici -->
+    <xsd:complexType>
+      <!-- contenu ici -->
+      <xsd:sequence>
+        <xsd:element name="nom" type="xsd:string"></xsd:element>
+        <xsd:element name="prenom" type="xsd:string" minOccurs='0'></xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <!-- balise livre -->
+  <xsd:element name="livre">
+    <!-- completez la balise "livre" ici -->
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="titres"/>
+        <xsd:element ref="auteur"/>
+        <xsd:element ref="annee"/>
+     </xsd:sequence>
+        <!-- attribut style -->
+        <xsd:attribute name="style" use="required">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="Policier"/>
+              <xsd:enumeration value="Théâtre"/>
+              <xsd:enumeration value="Fantastique"/>
+              <xsd:enumeration value="Bande Dessinée"/>
+              <xsd:enumeration value="Nouvelle"/>
+              <xsd:enumeration value="Biographie"/>
+              <xsd:enumeration value="Auto-biographie"/>
+              <xsd:enumeration value="Documentaire"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+
+        <xsd:attribute name="type" type="xsd:string" fixed="poche" />
+     
+    </xsd:complexType>
+  </xsd:element>
+  <!-- balise bibliothèque -->
+  <xsd:element name="bibliotheque">
+    <!-- completez la balise "bibliotheque" ici -->
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="livre" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

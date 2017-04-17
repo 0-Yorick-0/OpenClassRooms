@@ -1,0 +1,95 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- Min et Max d'occurences -->
+  <xsd:complexType name="personne">
+    <xsd:sequence>
+      <xsd:element name="nom" type="xsd:string"></xsd:element>
+      <xsd:element name="prenom" type="xsd:string" minOccurs="2" maxOccurs="unbounded"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- Referencement-->
+  <xsd:element name="montant" type="xsd:double">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:int">
+        <xsd:minInclusive value="-10000" ></xsd:minInclusive>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+
+  <xsd:element name="identite">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="nom" type="xsd:string"></xsd:element>
+        <xsd:element name="prenom" type="xsd:string"></xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Sans intérêts -->
+  <xsd:complexType name="compte">
+    <xsd:sequence>
+      <xsd:element ref="montant" ></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- Avec intérêts, on étend le type "compte" -->
+  <xsd:complexType name="compteInteret">
+    <xsd:complexContent>
+      <xsd:extension base="compte">
+        <xsd:attribute name="interet" type="xsd:float" ></xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="comptes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="livretA" type="compte" ></xsd:element>
+        <xsd:element name="courant" type="compte" ></xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="client">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="indentite"></xsd:element>
+        <xsd:element ref="comptes"></xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Schéma XML final-->
+  <xsd:element name="banque">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="client" maxOccurs="unbounded"></xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <!--identifiants-->
+  <xsd:element name="pere">
+    <xsd:complexType>
+      <xsd:attribute name="id" type="xsd:NCName" ></xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="enfant">
+    <xsd:complexType>
+      <xsd:attribute name="id" type="xsd:NCName" ></xsd:attribute>
+      <xsd:attribute name="pere" type="xsd:NCName" ></xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:eleemnt name="famille">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="pere"></xsd:element>
+        <xsd:element ref="enfant"></xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:eleemnt>
+
+</xsd:schema>

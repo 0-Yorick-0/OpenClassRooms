@@ -1,0 +1,63 @@
+@font-face { 
+    font-family: "LearningCurveProRegular";
+    src: url('police/webfonts/fontOK2/LearningCurve_OT-webfont.eot');
+    src: url('police/webfonts/fontOK2/LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'),
+         url('police/webfonts/fontOK2/LearningCurve_OT-webfont.woff') format('woff'),
+         url('police/webfonts/fontOK2/LearningCurve_OT-webfont.ttf') format('truetype'),
+         url('police/webfonts/fontOK2/LearningCurve_OT-webfont.svg#LearningCurveProRegular') format('svg');}
+
+body{font-family: arial,verdana,serif;
+	
+	background: url("images/wallpaper.jpg") fixed no-repeat}
+
+h1,h2,em,a{color: #3392A1}
+
+h1,h2{text-shadow: 2px 2px 0.5px black}
+
+h1{font-weight: bold;font-size: 2.3em;border: 1px #3E3E5C double;margin-left: 15%;}
+
+h2{font-weight: bold;font-size: 1.5em;text-decoration: underline;}
+
+mark{font-weight: bold;}
+
+h1,h1+p{text-align: center;
+		margin-left: 15%;}
+
+a{font-family: "LearningCurveProRegular"; font-size: 1.7em; color: white;}
+a:hover{font-weight:bold;color: orange;}
+a:active{font-size: 2em;font-weight:bold;color: black;}
+
+#bloc{display: flex;
+	  justify-content: space-around;
+	  border: 1px grey solid;
+	  margin-left: 15%
+	}
+
+
+.A{text-align: justify;
+	    margin: auto;
+	    width: 30%;
+	    word-wrap:break-word;}
+
+.liseret{float: left;
+	    width: 200px;
+	    height: 500px;
+	    background: #1B5DE1;
+	    border: 3px blue solid;
+		border-radius: 20px;
+		box-shadow: 3px 3px 3px black;
+		margin-left: 6px;
+		align-content: center;}
+
+@media all and (max-width: 1024px)
+{
+	h1,h2{color: orange}
+	#bloc{display: flex;
+		flex-direction: column;}
+	.A{min-width: 500px}
+	.liseret{display: none;}
+
+	h1, #bloc {margin-left: 0}
+
+}
+	

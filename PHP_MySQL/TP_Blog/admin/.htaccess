@@ -1,0 +1,4 @@
+AuthName "Merci de vous authentifier"
+AuthType Basic
+AuthUserFile "/Users/LaChevre/Documents/Developpement_Informatique/Developpement_Web/Mamp/Tests/TP_Blog/admin/.htpasswd"
+Require valid-user

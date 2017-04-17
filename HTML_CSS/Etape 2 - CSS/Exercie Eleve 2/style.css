@@ -1,0 +1,35 @@
+h1{
+	color : red;
+	text-align: center;
+	border : red 2px dotted ;
+	border-radius : 10px;
+}
+body {
+	background-image:url(image/plage.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	text-align:center;
+}
+
+@font-face { /* Définition d'une nouvelle police nommée LearningCurve*/
+        font-family: 'LearningCurve';
+
+    src: url('LearningCurve_OT-webfont.eot');
+
+    src: url('LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'),
+
+         url('LearningCurve_OT-webfont.woff') format('woff'),
+
+         url('LearningCurve_OT-webfont.ttf') format('truetype'),
+
+         url('LearningCurve_OT-webfont.svg#LearningCurveProRegular') format('svg');
+
+}
+#presentation{
+	text-align: center;
+	font-family:'LearningCurve', Arial, sans-serif;
+	font-size : 30px;
+}
+h2{
+	    text-shadow: 2px 2px 4px black;
+}

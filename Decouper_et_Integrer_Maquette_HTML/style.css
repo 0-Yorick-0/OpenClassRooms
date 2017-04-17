@@ -1,0 +1,25 @@
+body
+{
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	background: black;
+}
+
+.container
+{
+	width: 1230px;
+	margin: auto;
+}
+
+/* header + section_1 */
+
+#header-section_1
+{
+	background: url(images/section_1/photo-fond-s1.jpg);
+}
+
+
+header p
+{
+	font-family: 'Merriweather Heavy Italic', arial;
+}

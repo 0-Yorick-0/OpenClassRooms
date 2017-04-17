@@ -1,0 +1,145 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- elements de référence -->
+  <xsd:element name="nom" type="xsd:string"></xsd:element>
+  <xsd:element name="prenom" type="xsd:string"></xsd:element>
+
+  <xsd:element name="numero" type="xsd:nonNegativeInteger"></xsd:element>
+  <xsd:element name="codePostal">
+    <simpleType>
+    <xsd:restriction base="nonNegativeInteger">
+      <xsd:totalDigits value="5" ></xsd:totalDigits>
+    </xsd:restriction>
+    </simpleType>
+  </xsd:element>
+  <xsd:element name="ville" type="xsd:string"></xsd:element>
+  <xsd:element name="pays" type="xsd:string"></xsd:element>
+
+  <!-- balise voie -->
+  <xsd:element name="voie">
+    <complexType>
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+        <xsd:attribute name="type">
+            <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="impasse" />
+                <xsd:enumeration value="avenue" />
+                <xsd:enumeration value="rue" />
+            </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        </xsd:extension>
+    </xsd:simpleContent>
+    </complexType>
+  </xsd:element>
+
+  <!-- balise adresse -->
+  <xsd:element name="adresse">
+    <complexType>
+      <xsd:sequence>
+        <xsd:element ref="numero" />
+        <xsd:element ref="voie" />
+        <xsd:element ref="codePostal" />
+        <xsd:element ref="ville" />
+        <xsd:element ref="pays" />
+      </xsd:sequence>
+    </complexType>
+  </xsd:element>
+
+  <!-- Numéro telephone -->
+  <xsd:simpleType name="numero-tel">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="([0-9]{2}[ .-]*){4}[0-9]{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- balise téléphone -->
+  <xsd:element name="telephone">
+    <xsd:complexType>
+    <xsd:simpleContent>
+      <xsd:extension base="numero-tel">
+      <xsd:attribute name="type">
+          <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="fixe" />
+              <xsd:enumeration value="portable" />
+              <xsd:enumeration value="bureau" />
+          </xsd:restriction>
+          </xsd:simpleType>
+      </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- balise téléphones -->
+  <xsd:element name="telephones">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="telephone" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--Balise email -->
+  <xsd:element name="email">
+    <xsd:complexType>
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string" >
+        <xsd:attribut name="type">
+          <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="personnel" />
+              <xsd:enumeration value="professionnel" />
+          </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribut>
+        </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <!--Balise emails -->
+  <xsd:element name="emails">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="email" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- balise personne -->
+  <xsd:element name="personne">
+    <complexType>
+      <xsd:sequence>
+        <xsd:element ref="nom" />
+        <xsd:element ref="prenom" />
+        <xsd:element ref="adresse" />
+        <xsd:element ref="telephones" />
+        <xsd:element ref="emails" />
+      </xsd:sequence>
+
+      <xsd:attribut name="sexe">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="masculin" />
+              <xsd:enumeration value="féminin" />
+            </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribut>
+    </complexType>
+  </xsd:element>
+
+  <!--schéma XML-->
+  <xsd:element name="repertoire">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="personne" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+</xsd:schema>

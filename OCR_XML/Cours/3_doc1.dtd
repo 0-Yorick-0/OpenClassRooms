@@ -1,0 +1,4 @@
+<!ELEMENT boutique (telephone*)>
+<!ELEMENT telephone (marque, modele)>
+<!ELEMENT marque (Samsung|Apple|Nokia)>
+<!ELEMENT modele (Galaxy|iPhone|Lumia)>

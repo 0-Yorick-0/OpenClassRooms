@@ -1,0 +1,52 @@
+body{
+  background: #e30007;
+  background: -moz-linear-gradient(45deg, #e30007 0%, #ff686b 32%, #0094d0 62%, #5caece 81%, #ffffff 100%);
+  background: -webkit-linear-gradient(45deg, #e30007 0%,#ff686b 32%,#0094d0 62%,#5caece 81%,#ffffff 100%);
+  background: linear-gradient(45deg, #e30007 0%,#ff686b 32%,#0094d0 62%,#5caece 81%,#ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e30007', endColorstr='#ffffff',GradientType=1 );
+  height: 1000px;
+}
+
+.container{
+  margin: 10rem auto;
+  font-size: 2rem;
+}
+
+.container div{
+  opacity: 0.9;
+}
+
+p.panel{
+  float: none;
+  padding: 3rem;
+}
+
+.glyphicon{
+  margin: 0 1rem;
+}
+
+/* Premier paragraphe */
+.container div:first-child p{
+
+}
+
+/* Deuxième paragraphe */
+.container div:nth-child(2){
+  display: none;
+}
+
+/* Troisième paragraphe */
+.container div:nth-child(3){
+  display: none;
+}
+
+/* Dernier paragraphe */
+.container div:last-child{
+  margin: 2rem auto;
+  display: none;
+}
+
+.container div:last-child p{
+  font-size: 3rem;
+  padding: 6rem;
+}

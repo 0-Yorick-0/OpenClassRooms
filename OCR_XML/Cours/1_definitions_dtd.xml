@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!ELEMENT repertoire (personne)>
+<!ELEMENT  personne (nom?, prenom+, age*)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+
+<repertoire>
+  <personne>
+    <nom>L'éponge</nom>
+    <prenom>Bob</prenom>
+    <age>12</age>
+  </personne>
+
+  <personne>
+    <nom>Norris</nom>
+    <prenom>Chuck</prenom>
+    <age>Inconnu</age>
+  </personne>
+</repertoire>

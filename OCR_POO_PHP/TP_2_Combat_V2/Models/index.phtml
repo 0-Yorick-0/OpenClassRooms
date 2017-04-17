@@ -1,0 +1,22 @@
+
+  <h2 class="text-center">Bienvenue : que voulez-vous faire ?</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-push-3">
+          <form class="form-group" method="post" action="jouer.php">
+            <label for="creer">Créer un personnage ?</label>
+            <button type="submit" name="creer" class="btn btn-default center-block">Créer Perso</button>
+
+            <label for="adversaire">Choisissez un joueur :</label>
+            <select class="form-control" name="joueur">
+              <?php foreach ($list as $value): ?>
+                <option value="<?= $value->getNom() ?>"><?= $value->getNom() ?></option>
+              <?php endforeach;?>
+            </select>
+
+            <button type="submit" name="jouer" class="btn btn-default center-block">Jouer</button>
+          </form>
+        </div>
+      </div>
+    </div>

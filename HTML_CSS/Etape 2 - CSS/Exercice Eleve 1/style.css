@@ -1,0 +1,79 @@
+/* Installation du font avec font dans dossier*/
+@font-face {
+    font-family: 'fff_tusjbold';
+    src: url('fonts/FFF_Tusj-webfont.eot');
+    src: url('fonts/FFF_Tusj-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/FFF_Tusj-webfont.woff') format('woff'),
+         url('fonts/FFF_Tusj-webfont.ttf') format('truetype'),
+         url('fonts/FFF_Tusj-webfont.svg#fff_tusjbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+ body /* Image de font */
+{
+	background-size: cover;
+	background-image: url("Background/fond.jpg")
+
+}
+
+h1	/* Titre principale */
+{
+	font-family: 'fff_tusjbold', Impact, Arial;
+	font-size: 2.5em;
+	text-align: center;
+	color: #5F9C79;
+	text-shadow: 2px 2px 2px #5F9C79;
+}
+.poste
+{
+	font-family: 'fff_tusjbold', Impact, Arial;
+	text-align: center;
+	font-size: 1.8em;
+	color: #5F9C79;
+	text-shadow: 2px 2px 2px #5F9C79;
+}
+.poste:hover
+{
+	color: grey;
+}
+
+.photo_float
+{
+	float:right;
+	margin-right: 100px;
+	border: 3px black inset;	
+    box-shadow: 3px 3px 2px black;
+}
+
+#competences, #parcours, #formation, #loisirs
+{
+	font-family: 'fff_tusjbold', Impact, Arial;
+	color : #5F9C79 ; /*attribut couleur*/ 
+	text-shadow: 2px 2px 2px #9FB09D;
+	margin-left: 12px;
+}
+
+.menu:hover
+{
+	color: grey;
+	margin-left: 6px;	
+}
+
+.menu
+{
+	color: #5F9C79 ;	
+	font-family: 'fff_tusjbold', Impact, Arial;
+	font-size: 1.5em;
+	text-decoration: none;
+
+}
+
+span
+{
+	font-weight: bolds;
+}
+.hobbies
+{
+	margin-left: 25px;
+}

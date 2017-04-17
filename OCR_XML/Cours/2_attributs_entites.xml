@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!ENTITY nom "Bob">
+<!ENTITY % listeCheveux "cheveux (brun|blond|roux) #REQUIRED"
+<!ENTITY grandchild SYSTEM "2_grandChild.xml">
+<!ATTLIST father id ID #REQUIRED>
+<!ATTLIST child id ID #REQUIRED
+                father IDREF
+                sexe (masculin|feminin) #IMPLIED
+                age CDATA "20"
+                %listeCheveux
+>
+
+<father id="PER-1">
+  <child id="PER-2" father="PER-2" age="30" cheveux="brun">&nom;</child>
+  &grandchild;
+</father>

@@ -1,0 +1,4 @@
+
+-Lancez : mini_chat_2.php	 >> c'est la page 'Index'
+	
+* la page 'connexion_bdd.php' est inclus dans mini_chat_2 pour la connexion à la BDD

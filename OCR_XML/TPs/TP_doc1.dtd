@@ -1,0 +1,34 @@
+<!-- Racine -->
+<!ELEMENT repertoire (personne*)>
+
+<!-- Personne -->
+<!ELEMENT personne (nom, prenom, adresse, telephones, emails)>
+<!ATTLIST personne sexe (masculin|feminin) #REQUIRED>
+
+<!-- Nom et Prenom -->
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+
+<!-- Bloc Adresse -->
+<!ELEMENT adresse (numero, voie, codePostal, ville, pays)>
+<!ELEMENT numero (#PCDATA)>
+
+<!ELEMENT voie (#PCDATA)>
+<!ATTLIST voie type CDATA #REQUIRED>
+
+<!ELEMENT codePostal (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT pays (#PCDATA)>
+
+<!-- Telephones -->
+<!ELEMENT telephones (telephone+)>
+
+<!ENTITY telephone (#PCDATA)>
+<!ENTITY % listeTel "type (fixe|portable|bureau) #REQUIRED">
+<!ATTLIST telephone %listeTel;>
+
+<!-- Emails -->
+<!ELEMENT emails (email+)>
+
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email type (personnel|professionnel) #REQUIRED>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<racine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="5_contenus_complexes.xsd">
+  <prix devise="euro">35</prix>
+
+  <voiture marque="Renault" type="essence">Clio</voiture>
+
+  <personne sexe="masculin">
+    <nom></nom>
+    <prenom></prenom>
+  </personne>
+</racine>

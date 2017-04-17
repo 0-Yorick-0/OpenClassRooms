@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<racine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="6_aller_plus_loin.xsd">
+
+<!-- Min et Max d'occurences -->
+  <personne>
+    <nom>Norris</nom>
+    <prenom>Chuck</prenom>
+    <prenom>Titan</prenom>
+  </personne>
+
+<!-- Referencement -->
+  <banque>
+
+    <client>
+      <identite>
+        <nom>Norris</nom>
+        <prenom>Chuck</prenom>
+      </identite>
+
+      <compte>
+        <livretA>
+          <montant>9999</montant>
+        </livretA>
+        <courant>
+          <montant>9999</montant>
+        </courant>
+      </compte>
+    </client>
+
+  </banque>
+
+  <!--identifiants-->
+  <famille>
+    <pere id="PER-1"></pere>
+    <enfant id="PER-2" pere="PER-1"></enfant>
+  </famille>
+
+</racine>

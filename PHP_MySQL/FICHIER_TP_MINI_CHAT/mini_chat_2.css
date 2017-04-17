@@ -1,0 +1,19 @@
+
+
+#message_erreur{
+	
+	color : red;
+	text-align : center;
+}
+
+#message_envoye{
+	
+	color : green;
+	text-align : center;
+}
+
+form {
+	
+	text-align : center;
+	
+}

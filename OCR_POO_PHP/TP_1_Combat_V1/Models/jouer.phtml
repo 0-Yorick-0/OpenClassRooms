@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-md-push-3">
+      <h3 class="text-center">Votre personnage :</h3>
+        <div class="row">
+          <ul class="list-group">
+            <?php $properties = $perso->getAll();
+              //on retire l'id du tableau, il n'est pas nécéssaire de l'afficher
+              unset($properties['id']);
+              foreach ($properties as $key => $value):?>
+            <li class="list-group-item"><strong><?= ucfirst($key)?> : </strong><?= $value?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+  <?php if(isset($template_module)): ?>
+    <div class="row">
+      <div class="col-md-6 col-md-push-3">
+        <h3 class="text-center">Votre adversaire :</h3>
+          <div class="row">
+            <ul class="list-group">
+              <?php $properties = $adversaire->getAll();
+                //on retire l'id du tableau, il n'est pas nécéssaire de l'afficher
+                unset($properties['id']);
+                foreach ($properties as $key => $value):?>
+              <li class="list-group-item"><strong><?= ucfirst($key)?> : </strong><?= $value?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+      </div>
+    </div>
+  <?php endif; ?>
+
+  <div class="row">
+    <div class="col-md-6 col-md-push-3">
+      <form class="form-group" method="post" action="jouer.php">
+        <label for="adversaire">Choisissez un adversaire :</label>
+        <select class="form-control" name="adversaire">
+          <?php foreach ($list as $value):
+            if ($value->getNom() != $perso->getNom()):?>
+            <option value="<?= $value->getNom() ?>"><?= $value->getNom() ?></option>
+          <?php endif;
+        endforeach;?>
+        </select>
+        <button type="submit" name="frapper" class="btn btn-default center-block">Frapper</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>

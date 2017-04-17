@@ -1,0 +1,29 @@
+<?xml version="1.0" encodin="UTF-8" standalone="no" ?>
+
+<!DOCTYPE repertoire SYSTEM "TP_doc1.dtd">
+
+<repertoire>
+
+  <personne sexe="masculin">
+    <nom></nom>
+    <prenom></prenom>
+    <adresse>
+      <numero></numero>
+      <voie type="impasse"></voie>
+      <codePostal></codePostal>
+      <ville></ville>
+      <pays></pays>
+    </adresse>
+    <telephones>
+      <telephone type="fixe"></telephone>
+      <telephone type="portable"></telephone>
+    </telephone>
+    <emails>
+      <email type="personnel"></email>
+      <email type="professionnel"></email>
+    </emails>
+  </personne>
+
+
+
+</repertoire>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<repertoire>
+    <!-- John DOE -->
+    <personne sexe="masculin">
+        <nom>DOE</nom>
+        <prenom>John</prenom>
+        <adresse>
+            <numero>7</numero>
+            <voie type="impasse">impasse du chemin</voie>
+            <codePostal>75015</codePostal>
+            <ville>PARIS</ville>
+            <pays>FRANCE</pays>
+        </adresse>
+        <telephones>
+            <telephone type="fixe">01 02 03 04 05</telephone>
+            <telephone type="portable">06 07 08 09 10</telephone>
+        </telephones>
+        <emails>
+            <email type="personnel">john.doe@wanadoo.fr</email>
+            <email type="professionnel">john.doe@societe.com</email>
+        </emails>
+    </personne>
+</repertoire>
+
+
+
+//Expression Xpath:
+
+1) Récupérer le pays :
+child::repertoire/child::personne/child::adresse/child::pays
+OU
+repertoire/personne/adresse/pays
+
+2)Récupérer tout les commentaires :
+/descendant::comment()
+
+3)Récupérer pays en partant de téléphones:
+preceding-sibling::adresse/pays
+
+4)Récupérer le numéro de téléphone fixe:
+/repertoire/personne/telephones/telephone[attribute::type="fixe"]
+OU
+/repertoire/personne/telephones/telephone[@type="fixe"]
+
+5)Récupérer les numéros de téléphone qui ne sont pas fixes:
+/repertoire/personne/téléphones/telephone[not(attribute::type="fixe")]
+
+6)Récupérer le premier numéro de telephone:
+/repertoire/personne/telephones/telephone[position()=1]
+ou
+
+
+7)Récupérer le dernier téléphone :
+/repertoire/personne/telephones/telephone[last()]

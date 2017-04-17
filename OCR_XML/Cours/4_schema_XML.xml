@@ -1,0 +1,10 @@
+<?xml version="1.0 encoding="UTF-8 ?>
+
+<racine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="4_schema_XML.xsd">
+  <personne sexe="masculin">
+        <nom>Norris</nom>
+        <prenom>Chuck</prenom>
+        <age>9999</age>
+  </personne>
+</racine>

@@ -1,0 +1,146 @@
+@media screen and (min-width: 1024px){
+
+body{
+background-image: url(fond.jpg);
+font-family:'georgia','serif';
+}
+
+h1,h4{
+
+
+color:#F9429E;
+text-align:center;
+
+}
+
+img {
+  border: 2px #F9429E solid;
+  position:absolute;
+  margin-left: 35%;
+  margin-top: -8%;
+  
+}
+
+header{
+
+margin-top:2%;
+text-align:center;
+display:block;
+
+}
+
+.presentation {
+
+margin-top:2%;
+font-size:20px;
+color:purple;
+font-style:italic;
+
+
+}
+
+.lisere{
+
+background-color:#F9429E;
+float:left;
+
+
+}
+
+section {
+
+margin-top:3%;
+
+display:flex;
+justify-content:center;
+
+}
+
+.formation {
+
+padding-left:2%;
+
+
+}
+.experience{
+
+padding-right:2%;
+
+}
+.competence {
+padding-left:2%;
+padding-right:2%;
+
+
+}
+
+ul {
+
+
+}
+
+aside > p > img{
+
+
+float: left;
+left: -36%;
+top:16%;
+
+}
+
+}
+
+
+@media screen and (max-width: 1024px) {
+	
+aside > p > img {
+	
+	display:none;
+	
+}
+
+body{
+background-image: url(fond.jpg);
+font-family:'georgia','serif';
+}
+
+
+h1 {
+color:#F9429E;
+text-align:center;	
+	
+}
+
+h4{
+
+
+color:#F9429E;
+
+}
+
+img {
+  border: 2px #F9429E solid;
+  position:absolute;
+  margin-left: 88%;
+  margin-top: -13%;
+  
+}
+section {
+
+margin-top:3%;
+
+
+}
+
+.presentation {
+
+margin-top:2%;
+font-size:20px;
+color:purple;
+font-style:italic;
+text-align: center;
+
+
+}
+
+}

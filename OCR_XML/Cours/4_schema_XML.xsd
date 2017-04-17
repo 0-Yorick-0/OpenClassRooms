@@ -1,0 +1,14 @@
+<!-- Prologue type de schéma XML -->
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Element racine (imposé) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+  <xsd:attribut name="sexe" type="xsd:string" default="masculin"/>
+
+  <xsd:element name="nom" type="xsd:string" default="Steven"/>
+  <xsd:element name="prenom" type="xsd:string" fixed="Norris"/>
+  <xsd:element name="age" type="xsd:int" />
+
+</xsd:schema>

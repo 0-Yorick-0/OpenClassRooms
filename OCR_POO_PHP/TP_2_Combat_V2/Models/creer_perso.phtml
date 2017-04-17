@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-push-3">
+      <form class="form-group" method="post" action="jouer.php">
+
+        <label for="name">Nom du personnage :</label>
+        <input type="text" name="nom" class="form-control" required/>
+        <label for="degats">Santé du personnage</label>
+        <select class="form-control" name="degats">
+          <option value="25">25 pts</option>
+          <option value="50">50 pts</option>
+          <option value="100">100</option>
+        </select>
+        <label for="forcePerso">Type de personnage</label>
+        <select class="form-control" name="type">
+          <option value="magicien">Magicien</option>
+          <option value="guerrier">Guerrier</option>
+        </select>
+
+        <button type="submit" name="inserer" class="btn btn-default">Créer Perso</button>
+
+      </form>
+    </div>
+  </div>
+</div>
